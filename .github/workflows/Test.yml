@@ -25,6 +25,11 @@ jobs:
     - name: '⚙️ Dependencies (brew)'
       run: ./scripts/macosx/install-ada.sh
 
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      with:
+        sudo: false
+
     - name: Build and test GHDL
       run: |
         PATH=$PWD/gnat/bin:$PATH

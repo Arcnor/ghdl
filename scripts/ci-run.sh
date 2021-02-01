@@ -398,7 +398,6 @@ ci_run () {
   if [ "x$IS_MACOS" = "xtrue" ]; then
       export CPATH="$CPATH:`xcrun --show-sdk-path`/usr/include"
       CC=clang \
-      CONFIG_OPTS="--disable-libghdl" \
       bash -c "${scriptdir}/ci-run.sh $BUILD_CMD_OPTS build"
   else
       # Assume linux
